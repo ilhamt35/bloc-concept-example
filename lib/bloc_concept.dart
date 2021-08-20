@@ -21,6 +21,11 @@ class _BlocConceptState extends State<BlocConcept> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.pop(context);
+              }),
           title: Text('Bloc Concept'),
         ),
         body: Center(
@@ -40,6 +45,7 @@ class _BlocConceptState extends State<BlocConcept> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
             FloatingActionButton(
+              heroTag: 'btn1',
               onPressed: () {
                 bloc.eventSink.add(ColorState.to_black);
               },
@@ -49,6 +55,7 @@ class _BlocConceptState extends State<BlocConcept> {
               width: 10,
             ),
             FloatingActionButton(
+              heroTag: 'btn2',
               onPressed: () {
                 bloc.eventSink.add(ColorState.to_blue_accent);
               },

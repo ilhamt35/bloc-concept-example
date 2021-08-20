@@ -24,7 +24,8 @@ class HomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return BlocProvider<ColorBlocPackage>(
-                        builder: (context) => ColorBlocPackage(),
+                        create: (context) =>
+                            ColorBlocPackage(Colors.blueAccent),
                         child: BlocPackage());
                   }));
                 },
